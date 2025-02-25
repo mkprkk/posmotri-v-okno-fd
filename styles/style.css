@@ -57,7 +57,7 @@ html {
 .search-form {
   display: flex;
   flex-direction: row;
-  align-items: start;
+  align-items: end;
   justify-content: space-between;
 }
 
@@ -146,6 +146,136 @@ html {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
   overflow: hidden;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+} 
+
+.search-form__fieldset {
+  display: flex;
+  flex-direction: column; 
+  border: none;
+  gap: 5px;
+}
+
+.search-form__fieldset:has(:focus-visible):not(:nth-child(1)) {
+  outline: 1px solid white;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.search-form__checkbox + span {
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  border: 1px solid white;
+}
+
+.search-form__checkbox[type="checkbox"]:checked + span {
+  box-sizing: border-box;
+  background-color: white;
+}
+
+.search-form__checkbox[type="checkbox"]:checked + span::after {
+  content: "";
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  border: 1px solid black;
+}
+
+.search-form__label {
+  cursor: pointer;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid white;
+}
+
+.search-form__label-text {
+  margin-left: 24px;
+}
+
+.search-form__label:hover {
+  text-decoration: underline;
+}
+
+.search-form__label:active {
+  text-decoration: none;
+}
+
+.search-form__textfield {
+  width: 225px; /* не работает свойство fit-content; */
+
+  background-color: transparent;
+  border: none;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+
+  font-family: Fira Sans Condensed;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21.6px;
+  letter-spacing: 0%;
+  color: white;
+
+  appearance: none;
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__textfield:has(:focus-visible) {
+  outline: 1px solid white;
+}
+
+button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:focus-visible {
+  outline: 5px solid white;
+}
+
+button:hover {
+  text-decoration: underline;
+}
+
+button:active {
+  background-color: #545050;
+}
+
+.search-form__submit-button {
+  width: 194px;
+  height: 34px;
+  border: 1px solid white;
+
+  font-family: Fira Sans Condensed;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21.6px;
+  letter-spacing: 0%;
+  text-align: center;
+
 }
 
 h1,
