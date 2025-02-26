@@ -87,6 +87,22 @@ html {
   align-items: start;
 }
 
+.content__video-card:active {
+  background-color: #545050;
+}
+
+.content__video-card:hover {
+  text-decoration: underline;
+}
+
+.content__video-card:focus {
+  outline: none; 
+}
+
+.content__video-card:focus-visible {
+  outline: 1px solid white;
+}
+
 .content__video-card-thumbnail {
   width: 194px;
   height: 100%;
@@ -276,6 +292,15 @@ button:active {
   letter-spacing: 0%;
   text-align: center;
 
+}
+
+.content__card-link_current {
+  display: block;
+  background-color: #545050;
+}
+
+.content__list-item {
+  padding: 0 3px 0 3px;
 }
 
 h1,
