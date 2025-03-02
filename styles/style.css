@@ -37,10 +37,19 @@ ol {
 
 /* Базовые стили для кнопок */
 button {
+  height: 34px;
   background-color: transparent;
   color: white;
   border: none;
   cursor: pointer;
+
+  border: 1px solid white;
+  font-family: "Fira Sans Condensed", "Arial, sans-serif";
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21.6px;
+  
+  text-align: center;
 }
 
 button:focus {
@@ -48,7 +57,7 @@ button:focus {
 }
 
 button:focus-visible {
-  outline: 5px solid white;
+  outline: 1px solid white;
 }
 
 button:hover {
@@ -61,19 +70,7 @@ button:active {
 
 .more-button {
   width: 100%;
-  height: 34px;  
-
-  font-family: Fira Sans Condensed;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 21.6px;
-  letter-spacing: 0%;
-  text-align: center;
-
-  border: 1px solid white;
-
   margin-top: 30px;
-
 }
 
 /* Скрытие элементов с сохранением доступности */
@@ -99,7 +96,7 @@ button:active {
   block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", "Arial, sans-serif";
   font-size: 18px;
   background-color: #1b1919;
 }
@@ -118,8 +115,7 @@ button:active {
   position: relative;
   width: 399px;
   height: 298px;
-  overflow-y: scroll;
-  gap: 30px;
+  overflow-y: auto;
 }
 
 /* Блок с деталями */
@@ -166,30 +162,9 @@ button:active {
 /* Карточка видео */
 .content__video-card {
   width: 390px;
-  height: 103px;
   display: flex;
   flex-direction: row;
   align-items: start;
-}
-
-/* Стили для активной карточки */
-.content__video-card:active {
-  background-color: #545050;
-}
-
-/* Стили для карточки при наведении */
-.content__video-card:hover {
-  text-decoration: underline;
-}
-
-/* Убираем outline по умолчанию */
-.content__video-card:focus {
-  outline: none;
-}
-
-/* Добавляем outline при фокусе */
-.content__video-card:focus-visible {
-  outline: 1px solid white;
 }
 
 /* Миниатюра видео в карточке */
@@ -209,7 +184,7 @@ button:active {
 }
 
 /* Заголовок карточки */
-.content__video-card-title {
+  .content__video-card-title {
   text-transform: uppercase;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -218,11 +193,13 @@ button:active {
 
 /* Описание карточки */
 .content__video-card-description {
-  font-family: Fira Sans Condensed;
+  font-family: "Fira Sans Condensed", "Arial, sans-serif";
   font-weight: 400;
   font-size: 18px;
-  line-height: 18px;
+  line-height: 16.2px;
   letter-spacing: 0%;
+  
+  
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
@@ -231,13 +208,33 @@ button:active {
 
 /* Ссылка в карточке */
 .content__card-link {
+  display: block;
   text-decoration: none;
   color: white;
 }
 
+/* Стили для активной карточки */
+.content__card-link:active {
+  background-color: #545050;
+}
+
+/* Стили для карточки при наведении */
+.content__card-link:hover {
+  text-decoration: underline;
+}
+
+/* Убираем outline по умолчанию */
+.content__card-link:focus {
+  outline: none;
+}
+
+/* Добавляем outline при фокусе */
+.content__card-link:focus-visible {
+  outline: 1px solid white;
+}
+
 /* Стиль для текущей карточки */
 .content__card-link_current {
-  display: block;
   background-color: #545050;
 }
 
@@ -266,18 +263,13 @@ button:active {
   gap: 5px;
 }
 
-/* Стиль для поля с фокусом */
-.search-form__fieldset:has(:focus-visible):not(:nth-child(1)) {
-  outline: 1px solid white;
-}
-
 /* Заголовок поля */
 .search-form__fieldset-title {
-  font-family: Fira Sans Condensed;
+  font-family: "Fira Sans Condensed", "Arial, sans-serif";
   font-weight: 400;
   font-size: 18px;
   line-height: 21.6px;
-  letter-spacing: 0%;
+  
 }
 
 /* Список чекбоксов */
@@ -312,6 +304,8 @@ button:active {
 
 /* Лейбл для чекбокса */
 .search-form__label {
+  display: flex;
+  flex-direction: column;
   cursor: pointer;
 }
 
@@ -326,13 +320,8 @@ button:active {
 }
 
 /* Стиль для лейбла при наведении */
-.search-form__label:hover {
+.search-form__label-text:hover {
   text-decoration: underline;
-}
-
-/* Стиль для активного лейбла */
-.search-form__label:active {
-  text-decoration: none;
 }
 
 /* Текстовое поле ввода */
@@ -342,12 +331,12 @@ button:active {
   border: none;
   border-top: 1px solid white;
   border-bottom: 1px solid white;
-  font-family: Fira Sans Condensed;
+  font-family: "Fira Sans Condensed", "Arial, sans-serif";
   font-weight: 400;
   font-size: 18px;
   line-height: 21.6px;
-  letter-spacing: 0%;
-  color: white;
+  
+  color: inherit;
   appearance: none;
 }
 
@@ -364,14 +353,6 @@ button:active {
 /* Кнопка отправки формы */
 .search-form__submit-button {
   width: 194px;
-  height: 34px;
-  border: 1px solid white;
-  font-family: Fira Sans Condensed;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 21.6px;
-  letter-spacing: 0%;
-  text-align: center;
 }
 
 /* ==================== */
@@ -380,11 +361,11 @@ button:active {
 
 /* Заголовок */
 .title {
-  font-family: Oswald;
+  font-family: "Oswald", "Arial, sans-serif";
   font-weight: 700;
   font-size: 75px;
   line-height: 70.5px;
-  letter-spacing: 0%;
+  
   text-transform: uppercase;
 }
 
