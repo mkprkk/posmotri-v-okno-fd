@@ -10,7 +10,7 @@
 }
 
 /* Задаем высоту html на 100% */
-html {
+html {  
   block-size: 100%;
 }
 
@@ -197,8 +197,6 @@ button:active {
   font-weight: 400;
   font-size: 18px;
   line-height: 16.2px;
-  letter-spacing: 0%;
-  
   
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -304,9 +302,12 @@ button:active {
 
 /* Лейбл для чекбокса */
 .search-form__label {
-  display: flex;
-  flex-direction: column;
+  vertical-align: middle;
   cursor: pointer;
+}
+
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
 }
 
 /* Стиль для лейбла с фокусом */
@@ -317,11 +318,6 @@ button:active {
 /* Текст лейбла */
 .search-form__label-text {
   margin-left: 24px;
-}
-
-/* Стиль для лейбла при наведении */
-.search-form__label-text:hover {
-  text-decoration: underline;
 }
 
 /* Текстовое поле ввода */
